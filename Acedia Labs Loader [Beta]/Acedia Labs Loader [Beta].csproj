@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{949E1A5F-8A19-4921-A8F4-99FF0096F7A0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Acedia_Labs_Loader__Beta_</RootNamespace>
+    <AssemblyName>Acedia Labs Loader [Beta]</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GHW.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="InjectionLibrary\CRTInjection.cs" />
+    <Compile Include="InjectionLibrary\InjectionMethod.cs" />
+    <Compile Include="InjectionLibrary\InjectionMethodType.cs" />
+    <Compile Include="InjectionLibrary\ManualMap.cs" />
+    <Compile Include="InjectionLibrary\StandardInjectionMethod.cs" />
+    <Compile Include="InjectionLibrary\ThreadHijack.cs" />
+    <Compile Include="JLibrary\PortableExecutable\Constants.cs" />
+    <Compile Include="JLibrary\PortableExecutable\DATA_DIRECTORIES.cs" />
+    <Compile Include="JLibrary\PortableExecutable\IMAGE_BASE_RELOCATION.cs" />
+    <Compile Include="JLibrary\PortableExecutable\IMAGE_DATA_DIRECTORY.cs" />
+    <Compile Include="JLibrary\PortableExecutable\IMAGE_DOS_HEADER.cs" />
+    <Compile Include="JLibrary\PortableExecutable\IMAGE_FILE_HEADER.cs" />
+    <Compile Include="JLibrary\PortableExecutable\IMAGE_IMPORT_DESCRIPTOR.cs" />
+    <Compile Include="JLibrary\PortableExecutable\IMAGE_NT_HEADER32.cs" />
+    <Compile Include="JLibrary\PortableExecutable\IMAGE_OPTIONAL_HEADER32.cs" />
+    <Compile Include="JLibrary\PortableExecutable\IMAGE_RESOURCE_DATA_ENTRY.cs" />
+    <Compile Include="JLibrary\PortableExecutable\IMAGE_RESOURCE_DIRECTORY.cs" />
+    <Compile Include="JLibrary\PortableExecutable\IMAGE_RESOURCE_DIRECTORY_ENTRY.cs" />
+    <Compile Include="JLibrary\PortableExecutable\IMAGE_SECTION_HEADER.cs" />
+    <Compile Include="JLibrary\PortableExecutable\IMAGE_THUNK_DATA.cs" />
+    <Compile Include="JLibrary\PortableExecutable\PortableExecutable.cs" />
+    <Compile Include="JLibrary\PortableExecutable\ResourceWalker.cs" />
+    <Compile Include="JLibrary\PortableExecutable\U1.cs" />
+    <Compile Include="JLibrary\Tools\ErrorBase.cs" />
+    <Compile Include="JLibrary\Tools\MemoryIterator.cs" />
+    <Compile Include="JLibrary\Tools\UnmanagedBuffer.cs" />
+    <Compile Include="JLibrary\Tools\Utils.cs" />
+    <Compile Include="JLibrary\Win32\Win32Ptr.cs" />
+    <Compile Include="JLibrary\Win32\WinAPI.cs" />
+    <Compile Include="MenuC.cs" />
+    <Compile Include="Premium.cs" />
+    <Compile Include="PremiumINJ.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Protect.cs" />
+    <Compile Include="Properties\Pst.Designer.cs">
+      <DependentUpon>Pst.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Pst.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Pst.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beep.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
